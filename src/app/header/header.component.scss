@@ -1,5 +1,13 @@
 .page-header {
-//   background-color: green;
+  //   background-color: green;
   height: 100vh;
-  margin-top: 0.5em;
+  margin-top: 2.5vh;
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 100%;
+  }
 }
