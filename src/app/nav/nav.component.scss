@@ -1,0 +1,26 @@
+ul {
+  list-style-type: none;
+  margin: 0.5rem 0 0rem 0;
+
+  li {
+    display: inline;
+    margin: 0 1rem 0 0;
+    a {
+      color: white;
+      text-decoration: none;
+      padding-bottom: 1.5rem;
+      &:hover {
+        border-bottom: 4px solid blue;
+        color: rgba(255, 255, 255, 0.672);
+      }
+    }
+  }
+}
+
+.logoAndNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 4rem 0 4rem;
+  font-size: 0.8em;
+}

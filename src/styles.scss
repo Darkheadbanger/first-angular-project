@@ -6,21 +6,26 @@
 body {
   font-family: "NanumGothic-Regular", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
-  color: black;
+  font-size: 2rem;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(234, 229, 229);
-}
-
-.page-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  color: #f8f8f8;
+  line-height: 1.6;
+  letter-spacing: 1.5px;
+  background-color: black;
   margin: 0;
   padding: 0;
 }
+
+// .page-header {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   margin: 0;
+//   padding: 0;
+// }
 
 h1,
 h2,
