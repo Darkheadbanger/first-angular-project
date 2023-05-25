@@ -3,7 +3,19 @@
   <section class="welcome">
     <div class="presentation">
       <div class="name">David Bouhaben</div>
-      <div class="profession">I am a Full-Stack Web Developer.</div>
+      <div class="profession">
+        <div class="techno-wrapper">
+          I am a
+          <ng-container *ngFor="let stackTechno of stackTech; let i = index">
+            <span
+              [@fadeInOut]="i === indiceStackTechAcctuel ? 'in' : 'out'"
+            >
+              {{ stackTechno }}
+            </span>
+          </ng-container>
+          web developer
+        </div>
+      </div>
     </div>
   </section>
 </header>
