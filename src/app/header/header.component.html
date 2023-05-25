@@ -7,10 +7,10 @@
         I am a
 
         <div class="techno-wrapper">
-          <ng-container *ngFor="let stackTechno of stackTech; let i = index">
-            <span [@fadeInOut]="i === indiceStackTechAcctuel ? 'in' : 'out'">
+          <ng-container *ngFor="let stackTechno of arrStack; let i = index">
+            <span [@fadeInOut]="i === indiceStack ? 'in' : 'out'">
               {{ " " + stackTechno + " " }}
-            </span>
+            </span> 
           </ng-container>
         </div>
         <!-- web developer -->

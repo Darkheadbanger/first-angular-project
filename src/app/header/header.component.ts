@@ -13,37 +13,40 @@ import {
   styleUrls: ['./header.component.scss'],
   animations: [
     trigger('fadeInOut', [
-      state('in', style({ opacity: 1})),
-      state('out', style({ opacity: 0})),
+      state('in', style({ opacity: 1 })),
+      state('out', style({ opacity: 0 })),
       transition('in <=> out', animate(2000)),
     ]),
   ],
 })
 export class HeaderComponent implements OnInit {
-  public stackTech: string[] = ['Full-stack', 'Front-end', 'Back-end'];
-  public indiceStackTechAcctuel: number = 0;
-  public stackTechAcctuel: string = this.stackTech[this.indiceStackTechAcctuel];
+  public arrStack: string[] = ['Full-Stack', 'Front-End', 'Back-End'];
+  public indiceStack: number = 0;
+  public indiceStackAcctuel: string = this.arrStack[this.indiceStack];
 
   ngOnInit() {
-    this.cycleText();
+    // La function pour faire tourner l'animation
+    this.changeText();
   }
 
-  cycleText() {
-    this.changeText().then(() => {
+  // La fonction pour faire tourner l'application une fois la promesse est fait
+  changeText() {
+    this.etapeAnimationText().then(() => {
       setTimeout(() => {
-        this.cycleText();
+        this.changeText();
       }, 2000);
     });
   }
 
-  changeText(): Promise<void> {
-    return new Promise((resolve, reject) => {
+  // La fonction d'étape de comment l'animation va être joué avec promesse
+  etapeAnimationText(): Promise<void> {
+    return new Promise<void>((resolve) => {
       setTimeout(() => {
-        this.indiceStackTechAcctuel++;
-        if (this.indiceStackTechAcctuel >= this.stackTech.length) {
-          this.indiceStackTechAcctuel = 0;
+        this.indiceStack++;
+        if (this.indiceStack >= this.arrStack.length) {
+          this.indiceStack = 0;
         }
-        this.stackTechAcctuel = this.stackTech[this.indiceStackTechAcctuel];
+        this.indiceStackAcctuel = this.arrStack[this.indiceStack];
         resolve();
       }, 2000);
     });
