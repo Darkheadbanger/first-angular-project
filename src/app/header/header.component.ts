@@ -20,9 +20,9 @@ import {
   ],
 })
 export class HeaderComponent implements OnInit {
-  public arrStack: string[] = ['Full-Stack', 'Front-End', 'Back-End'];
-  public indiceStack: number = 0;
-  public indiceStackAcctuel: string = this.arrStack[this.indiceStack];
+  public technologieStack: string[] = ['Full-Stack', 'Front-End', 'Back-End'];
+  public indiceStackAcctuel: number = 0;
+  public stackAcctuel: string = this.technologieStack[this.indiceStackAcctuel];
 
   ngOnInit() {
     // La function pour faire tourner l'animation
@@ -42,11 +42,11 @@ export class HeaderComponent implements OnInit {
   etapeAnimationText(): Promise<void> {
     return new Promise<void>((resolve) => {
       setTimeout(() => {
-        this.indiceStack++;
-        if (this.indiceStack >= this.arrStack.length) {
-          this.indiceStack = 0;
+        this.indiceStackAcctuel++;
+        if (this.indiceStackAcctuel >= this.technologieStack.length) {
+          this.indiceStackAcctuel = 0;
         }
-        this.indiceStackAcctuel = this.arrStack[this.indiceStack];
+        this.stackAcctuel = this.technologieStack[this.indiceStackAcctuel];
         resolve();
       }, 2000);
     });
