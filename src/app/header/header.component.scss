@@ -6,15 +6,25 @@
   .welcome {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 30vh;
+    justify-content: space-evenly;
+    align-items: start;
+    margin-left: -10rem;
+    height: 60vh;
     width: 100%;
   }
 
-  .techno-wrapper {
+  .profession-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     span {
       position: absolute;
+      margin-left: 5vh;
+    }
+    .profession {
+      margin-top: 4vh;
+      margin-left: 10vh;
     }
   }
 }
