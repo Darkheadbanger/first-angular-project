@@ -2,11 +2,13 @@
   <app-nav></app-nav>
   <section class="welcome">
     <div class="presentation">
-      <div class="name">David Satria Bouhaben</div>
+      <div class="name">{{ name }} {{ secondName }} {{ lastName }}</div>
       <div class="profession-container">
         <div>I am a</div>
         <div class="techno-wrapper">
-          <ng-container *ngFor="let stackTechno of technologieStack; let i = index">
+          <ng-container
+            *ngFor="let stackTechno of technologieStack; let i = index"
+          >
             <span [@fadeInOut]="i === indiceStackAcctuel ? 'in' : 'out'">
               {{ stackTechno }}
             </span>
