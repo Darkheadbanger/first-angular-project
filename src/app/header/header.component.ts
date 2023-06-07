@@ -18,7 +18,7 @@ import {
       transition('in <=> out', animate(2000)),
     ]),
   ],
-})
+}) 
 export class HeaderComponent implements OnInit {
   public name!: string;
   public secondName!: string;
