@@ -7,11 +7,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
-    height: 60vh;
-    width: 100%;
+    align-items: start;
+    height: 500px;
+    width: 80%; // Définir une largeur pour le contenu
+    max-width: 1200px; // Empêcher le contenu de devenir trop large sur les grands écrans
+    margin: 0 auto; // Centrer le contenu verticalement
     .presentation {
-      margin-right: 40rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center; // Centrer le texte horizontalement
     }
   }
 
@@ -25,7 +29,7 @@
       margin-left: 5vh;
     }
     .profession {
-      margin-top: 4vh;
+      line-height: 4.7;
       margin-left: 10vh;
     }
   }
