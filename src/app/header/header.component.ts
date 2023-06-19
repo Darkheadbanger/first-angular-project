@@ -18,13 +18,15 @@ import {
       transition('in <=> out', animate(2000)),
     ]),
   ],
-}) 
+})
 export class HeaderComponent implements OnInit {
   public name!: string;
   public secondName!: string;
   public lastName!: string;
   public introdutionText!: string;
   public profession!: string;
+
+  public groupe!: string;
 
   public technologieStack: string[] = ['Full-Stack', 'Front-End', 'Back-End'];
   public indiceStackAcctuel: number = 0;
@@ -36,6 +38,7 @@ export class HeaderComponent implements OnInit {
     this.secondName = 'Satria';
     this.lastName = 'Bouhaben';
     this.profession = 'Developper';
+    this.groupe = 'Groupes';
     // La function pour faire tourner l'animation
     this.changeText();
   }

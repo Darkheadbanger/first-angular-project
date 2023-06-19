@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { LogoComponent } from './logo/logo.component';
+import { InfoMusicComponent } from './info-music/info-music.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, NavComponent, LogoComponent],
+  declarations: [AppComponent, HeaderComponent, NavComponent, LogoComponent, InfoMusicComponent],
   imports: [BrowserModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],

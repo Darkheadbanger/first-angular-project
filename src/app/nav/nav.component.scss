@@ -6,12 +6,27 @@ ul {
     display: inline;
     margin: 0 1rem 0 0;
     a {
+      position: relative;
       color: white;
       text-decoration: none;
       padding-bottom: 1.5rem;
+      transition: color 0.3 ease-in;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        background-color: #ff6347;
+        transform: scaleX(0);
+        transition: transform 0.3 ease-out;
+      }
       &:hover {
-        border-bottom: 4px solid blue;
-        color: rgba(255, 255, 255, 0.672);
+        color: #ff6347;
+        &::after {
+          transform: scaleX(1);
+        }
       }
     }
   }

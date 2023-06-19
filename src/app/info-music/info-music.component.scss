@@ -1,0 +1,26 @@
+.d1-border {
+  list-style-type: none;
+  display: flex;
+  margin: 50px 0 0 -1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1.6px solid #ff6347; /* Changement de la couleur de la bordure à un rouge tomate plus doux */
+  background: rgba(255, 255, 255, 0.102); /* Ajout d'un arrière-plan semi-transparent pour faire ressortir la liste */
+
+  li {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 2px solid #808080; /* Bordure grise pour plus de douceur */
+    border-radius: 8px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ffffff; /* Texte blanc pour contraster avec le fond noir */
+    transition: color 0.3s ease; /* Ajout d'une transition pour un changement de couleur doux */
+  }
+
+  a:hover {
+    color: #ff6347; /* Lorsqu'on survole le lien, il devient rouge tomate */
+  }
+}
