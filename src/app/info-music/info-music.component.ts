@@ -11,7 +11,7 @@ export class InfoMusicComponent {
   public nomGroupe!: string;
 
   ngOnInit() {
-    this.nomGroupe = 'Groupe';
+    this.nomGroupe = 'Artist';
     this.albums = 'Albums';
     this.musiciens = 'Musiciens';
   }
