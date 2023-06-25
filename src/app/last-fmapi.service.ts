@@ -11,10 +11,13 @@ let headers = new HttpHeaders({
   providedIn: 'root',
 })
 export class LastFMApiService {
+  subscribe(arg0: (data: any) => void) {
+    throw new Error('Method not implemented.');
+  }
   constructor(private http: HttpClient) {}
   title = 'lastFM-API';
 
-  getAlbumInfo(): Observable<any> {
+  getAlbumInfo(): Observable<string> {
     return this.http.get<string>(
       'http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=b82f28266f01e28f8f6edd9eb28a7555&artist=Cher&album=Believe&format=json',
       {

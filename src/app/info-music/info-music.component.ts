@@ -5,18 +5,23 @@ import { LastFMApiService } from '../last-fmapi.service';
   templateUrl: './info-music.component.html',
   styleUrls: ['./info-music.component.scss'],
 })
-export class InfoMusicComponent implements OnInit{
+export class InfoMusicComponent implements OnInit {
   public albums!: string;
   public musiciens!: string;
-  public nomGroupe!: string;*
+  public nomGroupe!: string;
 
-  // constructor(private lastFmApiService: LastFMApiService) { }
+  public dataMusic!: any;
+
+  constructor(private lastFmApiService: LastFMApiService) {}
 
   ngOnInit() {
     this.nomGroupe = 'Artist';
     this.albums = 'Albums';
     this.musiciens = 'Musiciens';
+    this.dataMusic = '';
 
-    
+    this.lastFmApiService.subscribe((dataLastFm) => {
+      let dataMusic = dataLastFm;
+    });
   }
 }
