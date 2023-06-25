@@ -1,18 +1,20 @@
 <ul class="d1-border">
   <li>
-    <a href=""
+    <a href="" onclick="return false"
       ><span class="artist-text"> {{ artist.name }}</span></a
     >
   </li>
   <li>
     <span class="members-text">
       <span *ngFor="let member of artist.members"
-        ><a href="">{{ member.active ? member.name : "" }}</a></span
+        ><a href="" onclick="return false">{{
+          member.active ? member.name : ""
+        }}</a></span
       >
     </span>
   </li>
   <li>
-    <a href=""
+    <a href="" onclick="return false"
       ><span class="album-text">{{ albumsMetallica }}</span>
       <img [src]="metallicaAlbumName" alt="Albums Metallica 72 seasons" />
     </a>
