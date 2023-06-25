@@ -1,12 +1,20 @@
 <ul class="d1-border">
   <li>
-    <a href="">{{ dataMusic }}</a>
-    <a href="">{{ nomGroupe }}</a>
+    <a href=""
+      ><span class="artist-text"> {{ artist.name }}</span></a
+    >
   </li>
   <li>
-    <a href="">{{ musiciens }}</a>
+    <span class="members-text">
+      <span *ngFor="let member of artist.members"
+        ><a href="">{{ member.active ? member.name : "" }}</a></span
+      >
+    </span>
   </li>
   <li>
-    <a href="">{{ albums }}</a>
+    <a href=""
+      ><span class="album-text">{{ albumsMetallica }}</span>
+      <img [src]="metallicaAlbumName" alt="Albums Metallica 72 seasons" />
+    </a>
   </li>
 </ul>

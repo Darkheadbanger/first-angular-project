@@ -1,27 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { LastFMApiService } from '../last-fmapi.service';
+import { Component, Input, OnInit } from '@angular/core';
+// import { Artist } from '../models/music-data.models';
+
 @Component({
   selector: 'app-info-music',
   templateUrl: './info-music.component.html',
   styleUrls: ['./info-music.component.scss'],
 })
 export class InfoMusicComponent implements OnInit {
-  public albums!: string;
+  public albumsMetallica!: string;
   public musiciens!: string;
   public nomGroupe!: string;
-
-  public dataMusic!: any;
-
-  constructor(private lastFmApiService: LastFMApiService) {}
+  public metallicaAlbumName!: string;
+  public members: string[] = []; // Crée cela en array
+  @Input() artist!: any;
 
   ngOnInit() {
-    this.nomGroupe = 'Artist';
-    this.albums = 'Albums';
-    this.musiciens = 'Musiciens';
-    this.dataMusic = '';
-
-    this.lastFmApiService.subscribe((dataLastFm) => {
-      let dataMusic = dataLastFm;
-    });
+    this.nomGroupe = '';
+    this.albumsMetallica = '72 Seasons';
+    this.musiciens = '';
+    this.metallicaAlbumName =
+      'https://upload.wikimedia.org/wikipedia/en/0/08/72_Seasons.jpg';
   }
 }

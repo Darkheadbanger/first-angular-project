@@ -36,9 +36,20 @@
 
   .groupe-content {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    width: 160%;
+    margin: 30% 0rem 0 -18rem;
     a {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
       text-decoration: none;
       color: white;
     }

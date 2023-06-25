@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LastFMApiService } from './last-fmapi.service';
+import { DiscogsAPI } from './discogsAPI.service';
 
-describe('LastFMApiService', () => {
-  let service: LastFMApiService;
+describe('DiscogsAPI', () => {
+  let service: DiscogsAPI;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LastFMApiService);
+    service = TestBed.inject(DiscogsAPI);
   });
 
   it('should be created', () => {

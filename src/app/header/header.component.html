@@ -19,9 +19,9 @@
     </div> -->
     <nav>
       <div class="groupe-content">
+        {{ groupe }}
         <a href="">
-          {{ groupe }}
-          <app-info-music></app-info-music>
+          <app-info-music [artist]="dataMusic"></app-info-music>
         </a>
       </div>
     </nav>
