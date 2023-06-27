@@ -8,6 +8,8 @@ import {
 } from '@angular/animations';
 
 import { DiscogsAPI } from '../discogsAPI.service';
+import { forkJoin } from 'rxjs';
+import { MusicData } from '../models/music-data.models';
 // import { MusicData } from '../models/music-data.models';
 @Component({
   selector: 'app-header',
@@ -30,7 +32,7 @@ export class HeaderComponent implements OnInit {
 
   public groupe!: string;
 
-  public dataMusic!: any;
+  public dataMusic!: MusicData[];
 
   public technologieStack: string[] = ['Full-Stack', 'Front-End', 'Back-End'];
   public indiceStackAcctuel: number = 0;
@@ -75,10 +77,11 @@ export class HeaderComponent implements OnInit {
   }
 
   discogsAPIS(): void {
-    this.discogsAPI.getAlbumInfo().subscribe({
-      next: (discogsData: any) => {
-        console.log(discogsData)
-        this.dataMusic = discogsData
+    // forkJoin attends un tableau d'Observables et non une instance de DiscogsAPI qui est discogsAPI (linjection dans le constructor)
+    forkJoin(this.discogsAPI.getAlbumInfo()).subscribe({
+      next: (discogData: MusicData[]) => {
+        console.log('discogsApi', discogData);
+        this.dataMusic = discogData;
       },
       error: (error) => console.error('Il y a une erreur', error),
     });
