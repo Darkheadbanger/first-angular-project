@@ -11,6 +11,15 @@ import { DiscogsAPI } from '../discogsAPI.service';
 import { forkJoin } from 'rxjs';
 import { MusicData } from '../models/music-data.models';
 // import { MusicData } from '../models/music-data.models';
+
+interface bandAlbum {
+  albums?: string;
+  cover?: string;
+}
+
+interface AlbumData {
+  [key: string]: bandAlbum;
+}
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -33,6 +42,8 @@ export class HeaderComponent implements OnInit {
   public groupe!: string;
 
   public dataMusic!: MusicData[];
+
+  public albums!: AlbumData;
 
   public technologieStack: string[] = ['Full-Stack', 'Front-End', 'Back-End'];
   public indiceStackAcctuel: number = 0;
@@ -77,6 +88,7 @@ export class HeaderComponent implements OnInit {
   }
 
   discogsAPIS(): void {
+    this.bandAlbums();
     // forkJoin attends un tableau d'Observables et non une instance de DiscogsAPI qui est discogsAPI (linjection dans le constructor)
     forkJoin(this.discogsAPI.getAlbumInfo()).subscribe({
       next: (discogData: MusicData[]) => {
@@ -84,6 +96,27 @@ export class HeaderComponent implements OnInit {
         this.dataMusic = discogData;
       },
       error: (error) => console.error('Il y a une erreur', error),
+    });
+  }
+
+  bandAlbums(): AlbumData {
+    return (this.albums = {
+      Metallica: {
+        albums: '72 Seasons',
+        cover: 'https://www.metal-archives.com/images/1/0/9/3/1093489.jpg?1546',
+      },
+      Slayer: {
+        albums: 'Repentless',
+        cover: 'https://www.metal-archives.com/images/5/1/7/8/517836.jpg?4917',
+      },
+      Megadeth: {
+        albums: 'The Sick, the Dying... and the Dead!',
+        cover: 'https://www.metal-archives.com/images/1/0/4/9/1049913.jpg?4546',
+      },
+      Anthrax: {
+        albums: 'For All Kings',
+        cover: 'https://www.metal-archives.com/images/5/4/8/6/548635.jpg?2104',
+      },
     });
   }
 }

@@ -14,9 +14,11 @@
     </span>
   </li>
   <li>
-    <a href="" onclick="return false"
-      ><span class="album-text">{{ albumsMetallica }}</span>
-      <img [src]="metallicaAlbumName" alt="Albums Metallica 72 seasons" />
-    </a>
+    <!-- <a href="" onclick="return false"
+      ><span class="album-text" *ngFor="let bands of bandAndAlbums | keyvalue">
+        {{ bands.value.albums | json }}</span
+      >
+      <img [src]="bandAndAlbums" alt="" />
+    </a> -->
   </li>
 </ul>

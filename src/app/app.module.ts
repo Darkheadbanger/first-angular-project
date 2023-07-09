@@ -18,7 +18,12 @@ import { AppRoutingModule } from './app-routing.module';
     LogoComponent,
     InfoMusicComponent,
   ],
-  imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    AppRoutingModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

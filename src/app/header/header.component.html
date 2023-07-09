@@ -21,7 +21,7 @@
       <div class="groupe-content">
         {{ groupe }}
         <a href="">
-          <app-info-music [artist]="dataMusic"></app-info-music>
+          <app-info-music *ngFor="let bandsData of dataMusic" [artist]="bandsData"></app-info-music>
         </a>
       </div>
     </nav>
