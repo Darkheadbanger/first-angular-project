@@ -7,7 +7,7 @@ import {
   transition,
 } from '@angular/animations';
 
-import { DiscogsAPI } from '../discogsAPI.service';
+import { DiscogsAPI } from '../API/discogsAPI.service';
 import { forkJoin } from 'rxjs';
 import { MusicData } from '../models/music-data.models';
 // import { MusicData } from '../models/music-data.models';
