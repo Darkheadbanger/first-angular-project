@@ -1,15 +1,15 @@
-export interface Artist {
-  name?: string;
-  //   mbid?: string;
-  //   match?: string;
-  //   utl?: string;
-  //   id?: number;
+export interface Member {
+  name: string;
+  id: number;
 }
 
-interface SiimiliarArtist {
-  artist: Artist[];
-}
+// interface Group {
+//   name: string;
+//   member: Member[];
+// }
 
 export interface MusicData {
-  siimiliarArtist: SiimiliarArtist;
+  name: string;
+  id: string;
+  member: Member[];
 }
